@@ -5,6 +5,8 @@ sudo pacman -S i2c-tools
 decode-dimms
 ```
 
+## Sample Output
+
 It prints
 ```
 # decode-dimms version 4.3
