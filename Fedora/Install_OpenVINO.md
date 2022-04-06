@@ -5,7 +5,6 @@ Intel OpenVINO provides official installation support on Ubuntu LTS version, Cen
 ## Download, build and install
 
 ### Download Source Code
-
 ```
 git clone https://github.com/openvinotoolkit/openvino.git
 git submodule update --init --recursive
