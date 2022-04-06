@@ -10,7 +10,7 @@ sudo ./DaVinci_Resolve_RUNTIME.run
 ```
 Click `Execute` and `run once` on pop up window
 
-### Run the software and determine possible errors
+### Run the software on terminal and determine possible errors
 ```
 /opt/resolve/bin/resolve
 ```
