@@ -5,7 +5,7 @@
 sudo pacman -S base-devel
 sudo pacman -S linux-headers
 ```
-### Quit x-server and reboot
+### Quit X-server and reboot
 ```
 sudo systemctl set-default multi-user.target
 sudo reboot now
@@ -14,10 +14,10 @@ sudo reboot now
 ```
 sudo bash ./NVIDIA-VERSION.run
 ```
-### Resume x-server after installation
+### Resume X-server after installation
 ```
 sudo systemctl set-default graphical.target
-sudo reboot now
+startx
 ```
 ### Check graphic card information
 ```
