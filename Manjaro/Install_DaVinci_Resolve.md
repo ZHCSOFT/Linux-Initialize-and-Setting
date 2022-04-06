@@ -17,11 +17,11 @@ Click `Execute` and `run once` on pop up window
 
 for `libcrypto.so` related error, do
 ```
-cp /usr/lib/libcrypto.so.1.0.0 /opt/resolve/libs/
+sudo cp /usr/lib/libcrypto.so.1.0.0 /opt/resolve/libs/
 ```
 for `libaprutil-1.so` related error such as glibc missing, do
 ```
-cp /usr/lib/libaprutil-1.so /opt/resovle/libs/
+sudo cp /usr/lib/libaprutil-1.so /opt/resovle/libs/
 ```
 for segmentation fault, do
 ```
@@ -29,7 +29,7 @@ yay -S gdb
 gdb /opt/resolve/bin/resolve
 r
 ```
-if it shows `/opt/intel/opencl-runtime` related exception, just remove `intel-opencl-runtime` in my case
+if it shows `/opt/intel/opencl-runtime` related exception, just remove `intel-opencl-runtime` for my case
 ```
 yay -R intel-opencl-runtime
 ```
