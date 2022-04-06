@@ -34,7 +34,7 @@ SysVStartPriority=99
 WantedBy=multi-user.target
 ```
 
-### Grant permission of executing the service
+### Grant permission for execute service
 ```
 sudo chmod +x /etc/rc.local
 ```
