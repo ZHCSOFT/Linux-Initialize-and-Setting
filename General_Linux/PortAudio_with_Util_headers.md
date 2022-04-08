@@ -1,4 +1,4 @@
-Sometimes we should use additional utilties of PortAudio via `libportaudio.so.2` shared library file, like
+Sometimes we should use additional utilties of PortAudio via `libportaudio.so.2` shared library file for C++ projects, like
 
 `portaudio/src/commom/pa_util.h`
 ```
@@ -41,13 +41,13 @@ add_library(PortAudio
   src/common/pa_memorybarrier.h
   src/common/pa_process.c
   src/common/pa_process.h
-  src/common/pa_ringbuffer.c
-  src/common/pa_ringbuffer.h
   src/common/pa_stream.c
   src/common/pa_stream.h
   src/common/pa_trace.c
   src/common/pa_trace.h
   src/common/pa_types.h
+  src/common/pa_ringbuffer.c
+  src/common/pa_ringbuffer.h
   src/common/pa_util.h
 )
 ```
