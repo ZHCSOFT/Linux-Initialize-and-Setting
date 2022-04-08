@@ -11,7 +11,7 @@ PaUtilRingBuffer
 PaUtil_AdvanceRingBufferWriteIndex
 ```
 
-But when we install portaudio by package manager or compile from source code, including these headers encounters `ld undefined reference PaUtil_***` issue on building process
+But when we install portaudio by package manager or compile from source code, including these headers encounters `ld undefined reference PaUtil_***` issue on `make` process
 
 We can fix this problem using some trick described below
 
@@ -22,7 +22,7 @@ git clone https://github.com/PortAudio/portaudio.git
 
 ## Edit files in source code directory
 
-Add 2 lines to `add_library(PortAudio` of `portaudio/CMakeLists.txt`
+Add 3 lines to `add_library(PortAudio` of `portaudio/CMakeLists.txt`
 ```
 add_library(PortAudio
   src/common/pa_allocation.c
@@ -63,7 +63,7 @@ set(PORTAUDIO_PUBLIC_HEADERS
 
 Add 2 lines to `for include in $(INCLUDES); do \` of `portaudio/Makefile.in`
 ```
-  for include in $(INCLUDES); do \
+  	for include in $(INCLUDES); do \
 		$(INSTALL_DATA) -m 644 $(top_srcdir)/include/$$include $(DESTDIR)$(includedir)/$$include; \
 	done
 	$(INSTALL_DATA) -m 644 $(top_srcdir)/src/common/pa_ringbuffer.h $(DESTDIR)$(includedir)/$$include
@@ -72,7 +72,7 @@ Add 2 lines to `for include in $(INCLUDES); do \` of `portaudio/Makefile.in`
 
 ## Configure, make, install and verify configuration
 ```
-./configure --prefix=YOURBUILDFILE
+./configure --prefix=YOURBUILDFILE --with-pic
 make --jobs=$(nproc --all)
 make install
 ```
