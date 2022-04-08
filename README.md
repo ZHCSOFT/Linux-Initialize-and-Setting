@@ -6,8 +6,12 @@ In this repository I mainly describe some tricks of setting Manjaro Linux. Strat
 
 ## Navigator
 
+### General Linux
+[Linux, C++: Build PortAudio with PaUtil](https://github.com/ZHCSOFT/Linux-Preparing-and-Setting/blob/main/General_Linux/PortAudio_with_Util_headers.md)<br>
+
 ### Fedora
 [Fedora: Intel OpenVINO installation](https://github.com/ZHCSOFT/Linux-Preparing-and-Setting/blob/main/Fedora/Install_OpenVINO.md)<br>
+
 ### Manjaro
 [Manjaro: Check memory chips infomation](https://github.com/ZHCSOFT/Linux-Preparing-and-Setting/blob/main/Manjaro/Check_memory_chips_vendor.md) <br>
 [Manjaro: DaVinci Installation](https://github.com/ZHCSOFT/Linux-Preparing-and-Setting/blob/main/Manjaro/Install_DaVinci_Resolve.md) <br>
