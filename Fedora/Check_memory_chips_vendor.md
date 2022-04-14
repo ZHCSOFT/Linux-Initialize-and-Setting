@@ -46,7 +46,7 @@ Memory Device
         
 ```
 
-### via i2c-tools
+### via `i2c-tools`
 ```
 sudo dnf install i2c-tools-perl
 decode-dimms
