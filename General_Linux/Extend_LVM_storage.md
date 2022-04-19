@@ -5,6 +5,45 @@ Now we have bought new storage device named `Disk_1` to extend `root` and `swap_
 
 ## Basic fdisk info
 
+### Check space info
+`df -h`
+We can see the root container is mapping to `/dev/mapper/vgubuntu-root`
+```
+
+Filesystem                 Size  Used Avail Use% Mounted on
+udev                        16G     0   16G   0% /dev
+tmpfs                      3.2G  1.8M  3.2G   1% /run
+/dev/mapper/vgubuntu-root  490G  195G  271G  42% /
+tmpfs                       16G     0   16G   0% /dev/shm
+tmpfs                      5.0M     0  5.0M   0% /run/lock
+tmpfs                       16G     0   16G   0% /sys/fs/cgroup
+/dev/loop0                  56M   56M     0 100% /snap/core18/1988
+/dev/loop1                 219M  219M     0 100% /snap/gnome-3-34-1804/66
+/dev/loop2                  65M   65M     0 100% /snap/gtk-common-themes/1514
+/dev/loop3                  52M   52M     0 100% /snap/snap-store/518
+/dev/loop4                  32M   32M     0 100% /snap/snapd/11036
+/dev/sda1                  511M  5.3M  506M   2% /boot/efi
+tmpfs                      3.2G   20K  3.2G   1% /run/user/125
+tmpfs                      3.2G     0  3.2G   0% /run/user/0
+```
+
+### Check filesystem info
+`cat /etc/fstab`
+We can see the main container is `ext4` filesystem type
+```
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+/dev/mapper/vgubuntu-root /               ext4    errors=remount-ro 0       1
+# /boot/efi was on /dev/sda1 during installation
+UUID=6237-CAC9  /boot/efi       vfat    umask=0077      0       1
+/dev/mapper/vgubuntu-swap_1 none            swap    sw              0       0
+```
+
 ### Check general storage info
 `sudo fdisk -l`
 We can see current `Disk_0` as `/dev/sda` mounted by OS, assigned with 2 partitation `/dev/sda1` for EFI booting and `/dev/sda2` for LVM storage. The new device `Disk_1` was assigned to `/dev/sdb` without any existing partition
@@ -172,4 +211,23 @@ sudo vgextend vgubuntu /dev/sdb
 ### (Optional)  Remove partition from `Volume Group`
 ```
 sudo vgreduce vgubuntu /dev/sdb1
+```
+
+## Modify `LVM` space and synchronous
+
+### Extend `LVM` space
+```
+sudo lvresize -L 1024G /dev/vgubuntu/root
+```
+Physical memory was usually used out for some program, so we need larger swap memory space
+```
+sudo lvresize -L 32G /dev/vgubuntu/swap_1
+```
+### Synchronous space change (ext4)
+```
+sudo resize2fs /dev/mapper/vgubuntu-root
+```
+### Synchronous space change (xfs)
+```
+sudo xfs_growfs /dev/mapper/vgubuntu-root
 ```
