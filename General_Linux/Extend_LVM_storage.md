@@ -6,7 +6,9 @@ Now we have bought new storage device named `Disk_1` to extend `root` and `swap_
 ## Basic fdisk info
 
 ### Check space info
-`df -h`
+```
+df -h
+```
 We can see the root container is mapping to `/dev/mapper/vgubuntu-root`
 ```
 
@@ -28,7 +30,9 @@ tmpfs                      3.2G     0  3.2G   0% /run/user/0
 ```
 
 ### Check filesystem info
-`cat /etc/fstab`
+```
+cat /etc/fstab
+```
 We can see the main container is `ext4` filesystem type
 ```
 # /etc/fstab: static file system information.
@@ -45,7 +49,9 @@ UUID=6237-CAC9  /boot/efi       vfat    umask=0077      0       1
 ```
 
 ### Check general storage info
-`sudo fdisk -l`
+```
+sudo fdisk -l
+```
 We can see current `Disk_0` as `/dev/sda` mounted by OS, assigned with 2 partitation `/dev/sda1` for EFI booting and `/dev/sda2` for LVM storage. The new device `Disk_1` was assigned to `/dev/sdb` without any existing partition
 ```
 
@@ -113,7 +119,9 @@ Sector size (logical/physical): 512 bytes / 512 bytes
 I/O size (minimum/optimal): 512 bytes / 512 bytes
 ```
 ### Check `Volume Group` info
-`sudo vgdisplay`
+```
+sudo vgdisplay
+```
 We have `Volume Group` named `vgubuntu` working on `Disk_0`
 
 ```
@@ -138,7 +146,9 @@ We have `Volume Group` named `vgubuntu` working on `Disk_0`
   VG UUID               YfrWI1-oVc3-KVwA-52fS-amw6-HVJh-OYPyAK
 ```
 ### Check `LVM` info
-`sudo lvdisplay`
+```
+sudo lvdisplay
+```
 We have two `LVM` named `root` for main storage and `swap_1` for memory swap built on `Volume Groups` named `vgubuntu`
 ```
   --- Logical volume ---
