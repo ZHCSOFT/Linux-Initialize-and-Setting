@@ -1,7 +1,7 @@
 ## Background
 Assume we have a computer with `Disk_0` storage and a linux is running on `LVMs` named `root` for main storage and `swap_1` for memory swap built on `Volume Groups` named `vgubuntu`, while the `Volume Group` `vgubuntu` is working on `Disk_0`
 
-Now we have bought new storage device named `Disk_1` to extend `root` and `swap_1`'s available space.
+Now we have bought new storage device named `Disk_1` to extend `root` and `swap_1`'s available space
 
 ## Basic fdisk info
 
@@ -215,14 +215,14 @@ sudo vgreduce vgubuntu /dev/sdb1
 
 ## Modify `LVM` space and synchronous
 
+Physical memory was usually used out for some program, thus we also need larger swap memory space
+
 ### Extend `LVM` space
 ```
 sudo lvresize -L 1024G /dev/vgubuntu/root
-```
-Physical memory was usually used out for some program, so we need larger swap memory space
-```
 sudo lvresize -L 32G /dev/vgubuntu/swap_1
 ```
+
 ### Synchronous space change (ext4)
 ```
 sudo resize2fs /dev/mapper/vgubuntu-root
@@ -230,4 +230,11 @@ sudo resize2fs /dev/mapper/vgubuntu-root
 ### Synchronous space change (xfs)
 ```
 sudo xfs_growfs /dev/mapper/vgubuntu-root
+```
+### Apply swap space change
+```
+sudo swapoff -v /dev/mapper/vgubuntu-swap_1
+sudo mkswap /dev/mapper/vgubuntu-swap_1
+sudo swapon -va
+free -m
 ```
