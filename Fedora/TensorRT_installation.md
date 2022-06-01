@@ -1,4 +1,3 @@
-
 # 简介
 TensorRT 是 NVIDIA 推出的基于 CUDA 的类神经网络 **Inference** 部署工具，支持 Windows, Linux 等操作系统。该平台由私有模块（包括核心组件、模型转换、优化器等）与开源模块（包含ONNX Parser等）组成，具有很高的运行效率。
 
@@ -34,7 +33,7 @@ export TRT_RELEASE=/home/USERNAME/TensorRT
 export LD_LIBRARY_PATH=$TRT_RELEASE/lib:$LD_LIBRARY_PATH
 ```
 
-建立 `build` 文件夹并生成编译用文件，指定 CUDA 版本为 11.6，手动设定 CUDA 架构为 75
+建立 `build` 文件夹并生成编译用文件，指定 CUDA 版本为 11.6，手动设定 CUDA 架构为 75，将编译完成的结果保存在 `build/out` 目录内
 ```
 cd ~/TensorRT
 mkdir build
@@ -68,3 +67,14 @@ ln -s ../lib64/libprotobuf.a  libprotobuf.a
 cd ~/TensorRT/build/
 make -j8
 ```
+
+## 运行测试范例
+
+进入 `build/out` 目录，运行测试范例
+
+```
+cd ~/TensorRT/build/out
+./sample_onnx_mnist
+```
+
+范例程序将输出运行结果
