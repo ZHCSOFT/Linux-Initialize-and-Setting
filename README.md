@@ -17,5 +17,5 @@ In this repository I mainly describe some tricks of setting Manjaro Linux. Strat
 ### Manjaro
 [Manjaro: Check memory chips infomation](https://github.com/ZHCSOFT/Linux-Preparing-and-Setting/blob/main/Manjaro/Check_memory_chips_vendor.md) <br>
 [Manjaro: DaVinci Installation](https://github.com/ZHCSOFT/Linux-Preparing-and-Setting/blob/main/Manjaro/Install_DaVinci_Resolve.md) <br>
-[Manjaro: NVIDIA Driver Installation, Quit X server](https://github.com/ZHCSOFT/Linux-Preparing-and-Setting/blob/main/Manjaro/Reboot_when_kernel_panic.md) <br>
+[Manjaro: NVIDIA Driver Installation, Quit X server](https://github.com/ZHCSOFT/Linux-Preparing-and-Setting/blob/main/Manjaro/NVIDIA_driver_installation.md) <br>
 [Manjaro: Auto reboot when kernel panic](https://github.com/ZHCSOFT/Linux-Preparing-and-Setting/blob/main/Manjaro/Reboot_when_kernel_panic.md) <br>
