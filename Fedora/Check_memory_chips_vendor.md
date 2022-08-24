@@ -53,5 +53,6 @@ decode-dimms
 ```
 if `No EEPROM found, try loading the eeprom or at24 module` exists, try use
 ```
+sudo modprobe eeprom
 decode-dimms
 ```
