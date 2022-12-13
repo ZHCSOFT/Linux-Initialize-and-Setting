@@ -1,4 +1,4 @@
-OS: Fedora 34
+OS: Fedora 37
 
 Intel OpenVINO provides official installation support on Ubuntu LTS version, CentOS 7, CentOS 8 and Red Hat Enterprise Linux, thus the runtime installation package can NOT be normally used on Fedora. We can only build OpenVINO and install from source.
 
