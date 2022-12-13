@@ -31,7 +31,7 @@ make --jobs=$(nproc --all)
 sudo make install
 ```
 
-Default installation `/usr/local`, these files and folders will be generated 
+The installation path has been set to `/usr/local`. These files and folders would be generated after step above
 ```
 ./docs/
 ./install_dependencies/
