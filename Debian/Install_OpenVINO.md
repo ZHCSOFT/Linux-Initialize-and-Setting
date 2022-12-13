@@ -20,7 +20,7 @@ git submodule update --init --recursive
 sudo apt install libopencv-dev
 ```
 
-#### 安装所需 libusb 套件以支持 Intel Movidius 神经计算棒硬件
+#### 安装所需 libusb 套件以支持 Intel Movidius 神经计算棒硬件（可选）
 
 ```
 sudo apt install libusb-1.0-0-dev
@@ -55,10 +55,10 @@ set(TBB_DIR "/usr/local/lib/cmake/TBB")
 
 ### 安装
 
-建立 build 文件夹，关闭 threat waring as error 以免编译器因警告报错（适用于高版本 GCC e.g. GCC 10.2)。因该组件不提供 Fedora 系统保证，需指定 OpenCV 的安装路径（以 /usr/local/include/opencv4/opencv2 为例）。因暂时不需使用神经计算棒，在配置中关闭 ENABLE_INTEL_MYRAID_COMMON 选项
+建立 build 文件夹，关闭 threat waring as error 以免编译器因警告报错（适用于高版本 GCC e.g. GCC 10.2)。因该组件不提供 Fedora 系统保证，需指定 OpenCV 的安装路径（以 /usr/local/include/opencv4/opencv2 为例）。因暂时不需使用神经计算棒，在配置中关闭 ENABLE_INTEL_MYRAID 选项
 ```
 mkdir build && cd build
-cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local/openvino -DENABLE_INTEL_MYRAID_COMMON=OFF -DOpenCV_DIR=/usr/local/include/opencv4/opencv2 -DTREAT_WARNING_AS_ERROR=OFF ..
+cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local/openvino -DENABLE_INTEL_MYRAID=OFF -DENABLE_INTEL_MYRAID_COMMON=OFF -DOpenCV_DIR=/usr/local/include/opencv4/opencv2 -DTREAT_WARNING_AS_ERROR=OFF ..
 make --jobs=$(nproc --all)
 sudo make install
 ```
