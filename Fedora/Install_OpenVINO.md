@@ -21,7 +21,7 @@ sudo dnf install opencv opencv-devel
 sudo dnf install libusbx-devel
 ```
 
-### Do build configuration, specify OpenCV libraries directory
+### Configure and Build
 
 If you wish to use Intel Movidius devices, please turn ON ENABLE_INTEL_MYRAID and ENABLE_INTEL_MYRAID_COMMON instead.
 ```
