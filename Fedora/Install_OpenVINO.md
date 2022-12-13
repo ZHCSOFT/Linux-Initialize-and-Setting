@@ -15,16 +15,18 @@ git submodule update --init --recursive
 sudo dnf install opencv opencv-devel
 ```
 
-### Install libusb for Intel Movidius packages
+### Install libusb for Intel Movidius packages (Optional)
 
 ```
 sudo dnf install libusbx-devel
 ```
 
 ### Do build configuration, specify OpenCV libraries directory
+
+If you wish to use Intel Movidius devices, please turn ON ENABLE_INTEL_MYRAID and ENABLE_INTEL_MYRAID_COMMON instead.
 ```
 mkdir build && cd build
-cmake -DCMAKE_BUILD_TYPE=Release -DENABLE_INTEL_MYRAID_COMMON=OFF -DOpenCV_DIR=/usr/local/include/opencv4/opencv2 -DTREAT_WARNING_AS_ERROR=OFF ..
+cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local/openvino -DENABLE_INTEL_MYRAID=OFF -DENABLE_INTEL_MYRAID_COMMON=OFF -DOpenCV_DIR=/usr/local/include/opencv4/opencv2 -DTREAT_WARNING_AS_ERROR=OFF ..
 make --jobs=$(nproc --all)
 sudo make install
 ```
