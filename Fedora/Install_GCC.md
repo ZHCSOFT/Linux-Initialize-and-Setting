@@ -8,7 +8,7 @@ cd ~/Downloads
 git clone https://github.com/gcc-mirror/gcc.git
 cd gcc
 ```
-Check and switch version required by command `git branch -a` and checkout to specific branch
+Check and switch version required by command `git branch -a` and checkout to specific branch you need
 ```
 git checkout remotes/origin/releases/gcc-11
 ./contrib/download_prerequisites
