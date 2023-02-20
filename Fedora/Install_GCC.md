@@ -7,6 +7,9 @@ sudo dnf install glibc-devel.i686 glibc-devel
 cd ~/Downloads
 git clone https://github.com/gcc-mirror/gcc.git
 cd gcc
+```
+Check and switch version required by command `git branch -a` and checkout to specific branch
+```
 git checkout remotes/origin/releases/gcc-11
 ./contrib/download_prerequisites
 ```
