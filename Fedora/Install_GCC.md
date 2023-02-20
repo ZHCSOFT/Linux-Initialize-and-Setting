@@ -16,8 +16,7 @@ git checkout remotes/origin/releases/gcc-11
 
 ### Build and Installation
 ```
-mkdir build && cd build
-../configure --prefix=/usr/local/gcc-11 --enable-bootstrap --enable-languages=c,c++ --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib
+./configure --prefix=/usr/local/gcc-11 --enable-bootstrap --enable-languages=c,c++ --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib
 make --jobs=$(nproc --all)
 sudo make install
 ```
