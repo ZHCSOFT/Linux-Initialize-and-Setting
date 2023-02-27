@@ -13,6 +13,7 @@ In this repository I mainly describe some tricks of setting Manjaro Linux. Strat
 ### Fedora
 [Fedora: Intel OpenVINO installation](https://github.com/ZHCSOFT/Linux-Preparing-and-Setting/blob/main/Fedora/Install_OpenVINO.md)<br>
 [Fedora: Check memory chips infomation](https://github.com/ZHCSOFT/Linux-Preparing-and-Setting/blob/main/Fedora/Check_memory_chips_vendor.md)<br>
+[Fedora: GCC installation and Setting](https://github.com/ZHCSOFT/Linux-Preparing-and-Setting/blob/main/Fedora/Install_GCC.md)<br>
 
 ### Manjaro
 [Manjaro: Check memory chips infomation](https://github.com/ZHCSOFT/Linux-Preparing-and-Setting/blob/main/Manjaro/Check_memory_chips_vendor.md) <br>
