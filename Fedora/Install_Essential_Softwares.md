@@ -1,9 +1,12 @@
-## MS-Edge
+# Microsoft Apps
 
 ### Import GPG key
 ```
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 ```
+
+## MS-Edge
+
 ### Add Edge RPM repository
 ```
 sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/edge
@@ -15,10 +18,6 @@ sudo dnf install microsoft-edge-stable
 
 ## MS-VSCode
 
-### Import GPG key
-```
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-```
 ### Add VSCode RPM repository
 ```
 sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/vscode
@@ -28,6 +27,7 @@ sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/vscod
 sudo dnf install code
 ```
 
+# Other vendors
 
 ## VLC
 
