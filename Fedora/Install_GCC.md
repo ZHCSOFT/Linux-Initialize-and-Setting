@@ -1,6 +1,6 @@
 ### Preparing basic packages and source code
 ```
-sudo dnf install glibc-devel.i686 glibc-devel
+sudo dnf install glibc-devel.i686 glibc-devel g++
 ```
 
 ```
