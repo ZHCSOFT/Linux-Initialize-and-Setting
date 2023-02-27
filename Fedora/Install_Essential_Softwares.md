@@ -35,6 +35,13 @@ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-rele
 sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 ```
 
+## FFmpeg
+
+### Install via dnf command
+```
+sudo dnf install ffmpeg ffmpeg-devel
+```
+
 ## VLC
 
 ### Install via dnf command
