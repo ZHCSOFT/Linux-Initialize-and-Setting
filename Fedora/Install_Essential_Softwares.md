@@ -38,6 +38,16 @@ sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfre
 ```
 ### Install via dnf command
 ```
+sudo dnf install vlc python-vlc
+```
+
+## Virtualbox
+
+### Import repositories
+```
 sudo wget -P /etc/yum.repos.d/ https://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo
+```
+### Install via dnf command
+```
 sudo dnf install VirtualBox.x86_64
 ```
