@@ -27,15 +27,16 @@ sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/vscod
 sudo dnf install code
 ```
 
-# Other vendors
-
-## VLC
+# RPM Fusion Provided
 
 ### Import RPM Fusion repositories
 ```
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 ```
+
+## VLC
+
 ### Install via dnf command
 ```
 sudo dnf install vlc python-vlc
@@ -43,10 +44,6 @@ sudo dnf install vlc python-vlc
 
 ## Virtualbox
 
-### Import repositories
-```
-sudo wget -P /etc/yum.repos.d/ https://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo
-```
 ### Install via dnf command
 ```
 sudo dnf install VirtualBox.x86_64
