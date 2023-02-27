@@ -46,7 +46,7 @@ sudo dnf install ffmpeg ffmpeg-devel
 
 ### Install via dnf command
 ```
-sudo dnf install vlc python-vlc
+sudo dnf install vlc vlc-extras vlc-devel python-vlc
 ```
 
 ## Virtualbox
