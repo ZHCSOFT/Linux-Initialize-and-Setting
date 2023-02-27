@@ -1,6 +1,3 @@
-
-[TOC]
-
 ## MS-Edge
 
 ### Import GPG key
@@ -29,4 +26,18 @@ sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/vscod
 ### Install via dnf command
 ```
 sudo dnf install code
+```
+
+
+## VLC
+
+### Import RPM Fusion repositories
+```
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+```
+### Install via dnf command
+```
+sudo wget -P /etc/yum.repos.d/ https://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo
+sudo dnf install VirtualBox.x86_64
 ```
