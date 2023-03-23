@@ -1,6 +1,10 @@
 ## What is bazel
 Bazel is a free and open-source software tool developed by Google used for the automation of building and testing software. Many google related packages building from source require it.
 
+## Environment
+Hardware: NVIDIA Jetson Nano
+OS: Ubuntu 18.04(aarch64)
+
 ## Build bazel(aarch64)
 Since executable installer is not provided for aarch64 linux, we have to build bazel from source.
 
