@@ -46,6 +46,6 @@ Remove soft link and move folders to `/usr/local/bin/`
 sudo rm -rf /usr/bin/images
 sudo rm -rf /usr/bin/networks
 
-sudo mv ../data/images /usr/bin
-sudo mv ../data/networks /usr/bin
+sudo mv ../data/images /usr/local/bin/
+sudo mv ../data/networks /usr/local/bin/
 ```
