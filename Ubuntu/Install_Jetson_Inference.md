@@ -43,8 +43,8 @@ sh ./download-models.sh
 Select models you need, download them.<br>
 Remove soft link and move folders to `/usr/local/bin/`
 ```
-sudo rm /usr/bin/images
-sudo rm /usr/bin/networks
+sudo rm -rf /usr/bin/images
+sudo rm -rf /usr/bin/networks
 
 sudo mv ../data/images /usr/bin
 sudo mv ../data/networks /usr/bin
