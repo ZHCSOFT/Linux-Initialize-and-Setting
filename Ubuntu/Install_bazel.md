@@ -16,7 +16,6 @@ sudo apt install openjdk-11-jdk protobuf-compiler build-essential autoconf libto
 wget https://github.com/bazelbuild/bazel/archive/master.zip
 mkdir bazel
 unzip master.zip -d ./bazel/
-
 ```
 
 ### Setting environment variable
@@ -28,7 +27,7 @@ export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-arm64/
 ```
 cd bazel
 ./compile.sh
-sudo cp -r output/bazel /usr/bin/
+sudo cp ./output/bazel /usr/bin/
 ```
 
 ### Verify installation
