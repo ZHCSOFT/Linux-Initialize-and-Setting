@@ -9,6 +9,8 @@ OS: Ubuntu 18.04(aarch64)
 Since executable installer is not provided for aarch64 linux, we have to build bazel from source.
 
 ### Preparing basic packages and source code
+Install GCC-11 and switch to newer version by article [GCC installation Guide for Ubuntu](https://github.com/ZHCSOFT/Linux-Preparing-and-Setting/blob/main/Ubuntu/install_GCC.md)<br>
+
 ```
 sudo apt update
 sudo apt install openjdk-11-jdk protobuf-compiler build-essential autoconf libtool pkg-config zip zlib1g-dev 
@@ -18,7 +20,7 @@ mkdir bazel
 unzip master.zip -d ./bazel/
 ```
 
-### Setting environment variable
+### Setting environment variable for JAVA
 ```
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-arm64/
 ```
