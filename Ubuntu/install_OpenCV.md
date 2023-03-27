@@ -47,7 +47,7 @@ cmake \
 -D PYTHON2_NUMPY_INCLUDE_DIRS=/usr/lib/python2.7/dist-packages/numpy/core/include \
 -D PYTHON2_PACKAGES_PATH=/usr/lib/python2.7/dist-packages \
 -D PYTHON3_EXECUTABLE=$(dirname $(which python3))/python3 \
--D PYTHON3_INCLUDE_DIR=$(dirname $(dirname $(which python3)))/include \
+-D PYTHON3_INCLUDE_DIR=$(echo $(dirname $(dirname $(which python3)))/include/python3.*m) \
 -D PYTHON3_LIBRARY=$(dirname $(dirname $(which python3)))/lib/libpython3.so \
 -D PYTHON3_NUMPY_INCLUDE_DIRS=$(python3 -c "import numpy; print(numpy.get_include())") \
 -D PYTHON3_PACKAGES_PATH=$(python3 -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())") \
