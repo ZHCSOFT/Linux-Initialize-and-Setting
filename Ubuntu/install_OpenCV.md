@@ -28,6 +28,7 @@ Due to the restriction of GFW, accerate mirror is required (Only for Chinese use
 ```
 cd ~/Downloads/opencv-4.7.0
 wget https://raw.gitmirror.com/opencv/opencv_3rdparty/8afa57abc8229d611c4937165d20e2a2d9fc5a12/face_landmark_model.dat
+mkdir .cache && mkdir .cache/data
 mv face_landmark_model.dat .cache/data/7505c44ca4eb54b4ab1e4777cb96ac05-face_landmark_model.dat
 ```
 
