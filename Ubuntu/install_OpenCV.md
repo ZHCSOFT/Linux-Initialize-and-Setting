@@ -13,9 +13,9 @@ sudo ln -s /usr/bin/vtk6 /usr/bin/vtk
 ```
 cd ~/Downloads
 wget https://github.com/opencv/opencv/archive/refs/tags/4.7.0.zip
-unzip opencv-4.7.0.zip && rm opencv-4.7.0.zip
+unzip 4.7.0.zip && rm 4.7.0.zip
 wget https://github.com/opencv/opencv_contrib/archive/refs/tags/4.7.0.zip
-unzip opencv_contrib-4.7.0.zip && rm opencv_contrib-4.7.0.zip
+unzip 4.7.0.zip && rm 4.7.0.zip
 ```
 
 ### Configure and make
