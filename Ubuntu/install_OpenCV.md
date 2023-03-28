@@ -87,7 +87,7 @@ cmake \
 ```
 
 #### Some tricks
-
+Build opencv from source requires memory approximately 8GB.<br>
 For users of NVIDIA Jetson nano or other development board, temporary swap size extension maybe appiled.
 ```
 cd ~/Downloads/opencv-4.7.0/build
