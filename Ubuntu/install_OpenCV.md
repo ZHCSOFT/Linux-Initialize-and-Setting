@@ -1,3 +1,6 @@
+Installing opencv and opencv-contrib via apt, dnf or pacman is convenient. But if you wanna make some customization, such as link with CUDA, build from source is required.<br>
+This article takes opencv-4.7.0 installation on NVIDIA Jetson Nano as example, including Python 3.6 and Python 2.7 packages.
+
 ### Install essential packages
 ```
 sudo apt install gtk+-3.0 qt5-default libvtk6-dev zlib1g-dev libjpeg-dev libwebp-dev libpng-dev libtiff5-dev libopenexr-dev libgdal-dev libdc1394-22-dev libavcodec-dev libavformat-dev libswscale-dev libtheora-dev libvorbis-dev libxvidcore-dev libx264-dev yasm libopencore-amrnb-dev libopencore-amrwb-dev libv4l-dev libxine2-dev libtbb-dev libeigen3-dev
@@ -18,18 +21,10 @@ wget https://github.com/opencv/opencv_contrib/archive/refs/tags/4.7.0.zip
 unzip 4.7.0.zip && rm 4.7.0.zip
 ```
 
-### Configure and make
+### Configure for build
 Activate your conda environment
 ```
 conda activate YOUR_CONDA_ENV
-```
-
-Due to the restriction of GFW, accerate mirror is required (Only for Chinese user)
-```
-cd ~/Downloads/opencv-4.7.0
-wget https://raw.gitmirror.com/opencv/opencv_3rdparty/8afa57abc8229d611c4937165d20e2a2d9fc5a12/face_landmark_model.dat
-mkdir .cache && mkdir .cache/data
-mv face_landmark_model.dat .cache/data/7505c44ca4eb54b4ab1e4777cb96ac05-face_landmark_model.dat
 ```
 
 Create build path and enter to the path
@@ -72,8 +67,28 @@ cmake \
 ..
 
 ```
+
+For users of NVIDIA Jetson nano or other development board, temporary swap size extension maybe appiled.
+```
+cd ~/Downloads/opencv-4.7.0/build
+sudo dd if=/dev/zero of=swapfile bs=1M count=2048
+sudo mkswap swapfile
+sudo swapon swapfile
+```
+
+Due to the restriction of GFW, if you are facing .dat download related issue, accerate mirror is required (Only for Chinese user)
+```
+cd ~/Downloads/opencv-4.7.0
+wget https://raw.gitmirror.com/opencv/opencv_3rdparty/8afa57abc8229d611c4937165d20e2a2d9fc5a12/face_landmark_model.dat
+mkdir .cache && mkdir .cache/data
+mv face_landmark_model.dat .cache/data/7505c44ca4eb54b4ab1e4777cb96ac05-face_landmark_model.dat
+```
+
+### Install
+
 Make and install
 ```
+cd ~/Downloads/opencv-4.7.0/build
 make -j4
 sudo make install
 ```
