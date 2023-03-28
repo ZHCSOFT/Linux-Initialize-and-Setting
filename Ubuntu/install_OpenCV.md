@@ -36,8 +36,12 @@ mkdir build && cd build
 Configuration for AARCH64(NVIDIA Jetson Nano)
 ```
 cmake \
+-D WITH_QT=ON \
 -D WITH_CUDA=ON \
 -D WITH_CUDNN=ON \
+-D WITH_LIBV4L=ON \
+-D WITH_GSTREAMER=ON \
+-D HIGHGUI_ENABLE_PLUGINS=ON \
 -D CUDNN_VERSION="8.0" \
 -D CUDNN_INCLUDE_DIR=/usr/include \
 -D CUDA_ARCH_BIN="5.3" \
@@ -46,8 +50,6 @@ cmake \
 -D OPENCV_ENABLE_NONFREE=ON \
 -D OPENCV_GENERATE_PKGCONFIG=ON \
 -D OPENCV_DNN_CUDA=ON \
--D WITH_GSTREAMER=ON \
--D WITH_LIBV4L=ON \
 -D BUILD_opencv_python2=ON \
 -D BUILD_opencv_python3=ON \
 -D BUILD_TESTS=OFF \
