@@ -1,4 +1,4 @@
-Installing opencv and opencv-contrib via apt, dnf or pacman is convenient. But if you wanna make some customization, such as link with CUDA, build from source is required.<br>
+Installing opencv and opencv-contrib via apt, dnf or pacman is convenient. But if you wanna make some customization, such as link with CUDA, build from source is required.<br><br>
 This article takes opencv-4.7.0 installation on NVIDIA Jetson Nano as example, including Python 3.6 and Python 2.7 packages.
 
 ### Install essential packages
