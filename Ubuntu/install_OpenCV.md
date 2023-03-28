@@ -70,6 +70,18 @@ cmake \
 
 ```
 
+#### Excepted configuration output
+
+```
+--   Python 3:
+--     Interpreter:                 /home/USERNAME/mambaforge/envs/YOUR_CONDA_ENV/bin/python3 (ver 3.6.15)
+--     Libraries:                   /home/USERNAME/mambaforge/envs/YOUR_CONDA_ENV/lib/libpython3.so (ver 3.6.15)
+--     numpy:                       /home/USERNAME/mambaforge/envs/YOUR_CONDA_ENV/lib/python3.6/site-packages/numpy/core/include (ver )
+--     install path:                /home/USERNAME/mambaforge/envs/YOUR_CONDA_ENV/lib/python3.6/site-packages/cv2/python-3.6
+```
+
+#### Some tricks
+
 For users of NVIDIA Jetson nano or other development board, temporary swap size extension maybe appiled.
 ```
 cd ~/Downloads/opencv-4.7.0/build
