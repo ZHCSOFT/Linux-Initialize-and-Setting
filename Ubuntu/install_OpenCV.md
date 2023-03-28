@@ -91,7 +91,7 @@ cmake \
 For users of NVIDIA Jetson nano or other development board, temporary swap size extension maybe appiled.
 ```
 cd ~/Downloads/opencv-4.7.0/build
-sudo dd if=/dev/zero of=swapfile bs=1M count=2048
+sudo dd if=/dev/zero of=swapfile bs=1M count=4096
 sudo mkswap swapfile
 sudo swapon swapfile
 ```
