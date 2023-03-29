@@ -19,14 +19,11 @@ git submodule update --init
 mkdir build && cd build
 cmake ..
 ```
-### When you failed to configure, shows message such as `Python 3.7 not found`, try to redo repository download action.
+### When you failed to configure, shows message such as `Python 3.7 not found`, try to redo submodule update.
 ```
-cd ~/Downloads
-rm -rf jetson-inference
-git submodule update --remote --recursive
-git clone https://github.com/dusty-nv/jetson-inference.git
-cd jetson-inference/
-git submodule update --init
+cd ~/Downloads/jetson-inference/
+git submodule update --init --recursive
+cd build
 ```
 
 ## Make and install
