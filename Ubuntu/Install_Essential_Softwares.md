@@ -1,4 +1,5 @@
 ## Usergroup Configuration
+Serial Port, Microphone, Camera
 ```
 sudo usermod -aG dialout $(whoami)
 sudo usermod -aG audio $(whoami)
