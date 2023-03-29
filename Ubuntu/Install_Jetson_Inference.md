@@ -14,26 +14,16 @@ cd jetson-inference/
 git submodule update --init
 ```
 
-## Build basic package without models installation
+## Build basic package without models and install
 ```
 mkdir build && cd build
 cmake ..
 make -j4
-```
-
-## Install to system-provided python and virtual-enviroments
-Assume we have conda env named `Torch` located in `~/mambaforge/envs/Torch/` with `Python=3.6`
-```
 sudo make install
-
-cp /usr/lib/python3.6/dist-packages/jetson_utils_python.so ~/mambaforge/envs/Torch/lib/pythonX.X/site-packages/
-cp /usr/lib/python3.6/dist-packages/jetson_inference_python.so ~/mambaforge/envs/Torch/lib/pythonX.X/site-packages/
-cp -r /usr/lib/python3.6/dist-packages/jetson ~/mambaforge/envs/Torch/lib/pythonX.X/site-packages/
-cp -r /usr/lib/python3.6/dist-packages/Jetson ~/mambaforge/envs/Torch/lib/pythonX.X/site-packages/
 ```
 
-## Download models and install
-Since URL [https://nvidia.box.com/] was blocked by GFW, you should manually download models via VPN or other service.<br>
+### Download models and install
+Since URL [https://nvidia.box.com/] was blocked by GFW, for Chinese user, you should manually download models via VPN or other service.<br>
 Download such large quantity of files results to termination, too. So download and install models independently is recommand.<br>
 Assume we can access [https://nvidia.box.com/]
 ```
@@ -48,4 +38,13 @@ sudo rm -rf /usr/bin/networks
 
 sudo mv ../data/images /usr/local/bin/
 sudo mv ../data/networks /usr/local/bin/
+```
+
+## Install to system-provided python and virtual-enviroments
+Assume we have conda env named `Torch` located in `~/mambaforge/envs/Torch/` with `Python=3.6`
+```
+cp /usr/lib/python3.6/dist-packages/jetson_utils_python.so ~/mambaforge/envs/Torch/lib/pythonX.X/site-packages/
+cp /usr/lib/python3.6/dist-packages/jetson_inference_python.so ~/mambaforge/envs/Torch/lib/pythonX.X/site-packages/
+cp -r /usr/lib/python3.6/dist-packages/jetson ~/mambaforge/envs/Torch/lib/pythonX.X/site-packages/
+cp -r /usr/lib/python3.6/dist-packages/Jetson ~/mambaforge/envs/Torch/lib/pythonX.X/site-packages/
 ```
