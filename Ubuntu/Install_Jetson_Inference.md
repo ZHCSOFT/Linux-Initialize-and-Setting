@@ -44,11 +44,11 @@ sh ./download-models.sh
 Select models you need, download them.<br>
 Remove soft link and move folders to `/usr/local/bin/`
 ```
-sudo rm -rf /usr/bin/images
-sudo rm -rf /usr/bin/networks
+sudo rm -rf /usr/local/bin/images
+sudo rm -rf /usr/local/bin/networks
 
-sudo mv ../data/images /usr/local/bin/
-sudo mv ../data/networks /usr/local/bin/
+sudo mv ~/Downloads/jetson-inference/data/images /usr/local/bin/
+sudo mv ~/Downloads/jetson-inference/data/networks /usr/local/bin/
 ```
 
 ### Download PyTorch whl packages and install
