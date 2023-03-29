@@ -14,7 +14,7 @@ cd jetson-inference/
 git submodule update --init
 ```
 
-## Configure installation without models and PyTorch whl
+## Configure installation without models and PyTorch whl(Do not enter `SPACE` key when it shows PyTorch installation)
 ```
 mkdir build && cd build
 cmake ..
