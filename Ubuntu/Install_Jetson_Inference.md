@@ -33,6 +33,10 @@ sudo make install
 ```
 
 ## Download remaining modules
+Install pip3 and pip3
+```
+sudo apt install pip-python pip3-python
+```
 Since URL [https://nvidia.box.com/] was blocked by GFW, for Chinese user, you should manually download models via VPN or other service.<br>
 Assume we can access [https://nvidia.box.com/]
 ### Download models and config
@@ -55,16 +59,19 @@ sudo mv ~/Downloads/jetson-inference/data/networks /usr/local/bin/
 For Python 2.7
 ```
 wget https://nvidia.box.com/shared/static/o8teczquxgul2vjukwd4p77c6869xmri.whl -O torch-1.1.0-cp27-cp27mu-linux_aarch64.whl
+pip2 install torch-1.1.0-cp27-cp27mu-linux_aarch64.whl
 ```
 
 For Python 3.6
 ```
 wget https://nvidia.box.com/shared/static/9eptse6jyly1ggt9axbja2yrmj6pbarc.whl -O torch-1.6.0-cp36-cp36m-linux_aarch64.whl
+pip3 install torch-1.6.0-cp36-cp36m-linux_aarch64.whl
 ```
 
 For Python 3.8
 ```
 wget https://developer.download.nvidia.com/compute/redist/jp/v50/pytorch/torch-1.12.0a0+2c916ef.nv22.3-cp38-cp38-linux_aarch64.whl -O torch-1.12.0a0+2c916ef.nv22.3-cp38-cp38-linux_aarch64.whl
+pip3 install torch-1.12.0a0+2c916ef.nv22.3-cp38-cp38-linux_aarch64.whl
 ```
 
 ### Download mediapipe and install
