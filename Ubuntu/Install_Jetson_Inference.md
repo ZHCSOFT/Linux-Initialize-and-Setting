@@ -35,10 +35,11 @@ sudo make install
 ## Download remaining modules
 Install pip3 and pip3
 ```
-sudo apt install pip-python pip3-python
+sudo apt install python3-pip python-pip
 ```
 Since URL [https://nvidia.box.com/] was blocked by GFW, for Chinese user, you should manually download models via VPN or other service.<br>
 Assume we can access [https://nvidia.box.com/]
+
 ### Download models and config
 Download such large quantity of files results to termination, too. So download and install models independently is recommand.
 ```
