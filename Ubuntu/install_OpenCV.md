@@ -87,6 +87,8 @@ cmake \
 ```
 
 #### Some tricks
+
+##### Memory insufficient related issue
 Build opencv from source requires memory approximately 8GB.<br>
 For users of NVIDIA Jetson nano or other development board, temporary swap size extension maybe appiled.
 ```
@@ -95,8 +97,14 @@ sudo dd if=/dev/zero of=swapfile bs=1M count=4096
 sudo mkswap swapfile
 sudo swapon swapfile
 ```
+After build opencv packages, turn off and delete swap file
+```
+sudo swapoff ~/Downloads/opencv-4.7.0/build/swapfile
+sudo rm -f ~/Downloads/opencv-4.7.0/build/swapfile
+```
 
-Due to the restriction of GFW, if you are facing .dat download related issue, accerate mirror is required (Only for Chinese user)
+##### Network issue(For Chinese user)
+Due to the restriction of GFW, if you are facing .dat download related issue, accerate mirror is required.
 ```
 cd ~/Downloads/opencv-4.7.0
 wget https://raw.gitmirror.com/opencv/opencv_3rdparty/8afa57abc8229d611c4937165d20e2a2d9fc5a12/face_landmark_model.dat
