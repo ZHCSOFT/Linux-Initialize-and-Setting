@@ -14,15 +14,25 @@ cd jetson-inference/
 git submodule update --init
 ```
 
-## Build basic package without models and install
+## Configure installation without models
 ```
 mkdir build && cd build
 cmake ..
+```
+### When you failed to configure, shows message such as `Python 3.7 not found`, try to update submodule recursively.
+```
+cd ~/Downloads/jetson-inference
+git submodule update --remote --recursive
+cd build
+```
+
+## Make and install
+```
 make -j4
 sudo make install
 ```
 
-### Download models and install
+## Download models and install
 Since URL [https://nvidia.box.com/] was blocked by GFW, for Chinese user, you should manually download models via VPN or other service.<br>
 Download such large quantity of files results to termination, too. So download and install models independently is recommand.<br>
 Assume we can access [https://nvidia.box.com/]
