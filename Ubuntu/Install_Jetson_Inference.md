@@ -14,7 +14,7 @@ cd jetson-inference/
 git submodule update --init
 ```
 
-## Configure installation without models
+## Configure installation without models and PyTorch whl
 ```
 mkdir build && cd build
 cmake ..
@@ -32,10 +32,11 @@ make -j4
 sudo make install
 ```
 
-## Download models and install
+## Download remaining modules
 Since URL [https://nvidia.box.com/] was blocked by GFW, for Chinese user, you should manually download models via VPN or other service.<br>
-Download such large quantity of files results to termination, too. So download and install models independently is recommand.<br>
 Assume we can access [https://nvidia.box.com/]
+### Download models and config
+Download such large quantity of files results to termination, too. So download and install models independently is recommand.
 ```
 cd ~/Downloads/jetson-inference/tools/
 sh ./download-models.sh
@@ -50,11 +51,56 @@ sudo mv ../data/images /usr/local/bin/
 sudo mv ../data/networks /usr/local/bin/
 ```
 
-## Install to system-provided python and virtual-enviroments
+### Download PyTorch whl packages and install
+For Python 2.7
+```
+wget https://nvidia.box.com/shared/static/o8teczquxgul2vjukwd4p77c6869xmri.whl -O torch-1.1.0-cp27-cp27mu-linux_aarch64.whl
+```
+
+For Python 3.6
+```
+wget https://nvidia.box.com/shared/static/9eptse6jyly1ggt9axbja2yrmj6pbarc.whl -O torch-1.6.0-cp36-cp36m-linux_aarch64.whl
+```
+
+For Python 3.8
+```
+wget https://developer.download.nvidia.com/compute/redist/jp/v50/pytorch/torch-1.12.0a0+2c916ef.nv22.3-cp38-cp38-linux_aarch64.whl -O torch-1.12.0a0+2c916ef.nv22.3-cp38-cp38-linux_aarch64.whl
+```
+
+## Other components
+### Install to system-provided python and virtual-enviroments
 Assume we have conda env named `Torch` located in `~/mambaforge/envs/Torch/` with `Python=3.6`
 ```
 cp /usr/lib/python3.6/dist-packages/jetson_utils_python.so ~/mambaforge/envs/Torch/lib/pythonX.X/site-packages/
 cp /usr/lib/python3.6/dist-packages/jetson_inference_python.so ~/mambaforge/envs/Torch/lib/pythonX.X/site-packages/
 cp -r /usr/lib/python3.6/dist-packages/jetson ~/mambaforge/envs/Torch/lib/pythonX.X/site-packages/
 cp -r /usr/lib/python3.6/dist-packages/Jetson ~/mambaforge/envs/Torch/lib/pythonX.X/site-packages/
+```
+### Install torchvision
+
+For Python 2.7
+```
+cd ~/Downloads/jetson-inference/build
+rm -r -f torchvision-27
+git clone -bv0.3.0 https://github.com/dusty-nv/vision torchvision-27
+cd torchvision-27
+echo "$LOG building torchvision for Python 2.7..."
+sudo python setup.py install
+```
+
+For Python 3.6
+```
+sudo rm -r -f torchvision-36
+git clone -bv0.3.0 https://github.com/dusty-nv/vision torchvision-36
+cd torchvision-36
+echo "$LOG building torchvision for Python 3.6..."
+sudo python3 setup.py install
+```
+
+For Python 3.8
+```
+rm -r -f torchvision-38
+git clone -bv0.12.0 https://github.com/pytorch/vision torchvision-38
+cd torchvision-38
+sudo python3 setup.py install
 ```
