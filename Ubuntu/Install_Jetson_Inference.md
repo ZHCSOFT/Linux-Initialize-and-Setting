@@ -68,12 +68,13 @@ wget https://developer.download.nvidia.com/compute/redist/jp/v50/pytorch/torch-1
 ```
 
 ### Download mediapipe and install
+Install opencv-python and opencv-contrib-python from pip whl is not recommand for NVIDIA Jetson Nano.
 ```
 wget https://github.com/PINTO0309/mediapipe-bin/releases/download/v0.8.5/v0.8.5.zip -O mediapipe_cu102
 _python3.6_aarch64.zip
 unzip mediapipe_cu102_python3.6_aarch64.zip && rm mediapipe_cu102_python3.6_aarch64.zip
 mv v0.8.5/numpy119x/py36/*.whl . && rm -r v0.8.5
-pip3 install mediapipe-0.8.5_cuda102-cp36-cp36m-linux_aarch64.whl protobuf==3.19.6
+pip3 install --no-deps mediapipe-0.8.5_cuda102-cp36-cp36m-linux_aarch64.whl protobuf==3.19.6 six attrs absl-py wheel dataclasses
 ```
 
 ## Other components
