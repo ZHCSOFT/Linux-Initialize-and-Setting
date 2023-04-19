@@ -57,19 +57,21 @@ sudo mv ~/Downloads/jetson-inference/data/networks /usr/local/bin/
 ```
 
 ### Download PyTorch whl packages and install
-For Python 2.7
+#### For Python 2.7
 ```
 wget https://nvidia.box.com/shared/static/o8teczquxgul2vjukwd4p77c6869xmri.whl -O torch-1.1.0-cp27-cp27mu-linux_aarch64.whl
 pip2 install torch-1.1.0-cp27-cp27mu-linux_aarch64.whl
 ```
 
-For Python 3.6
+#### For Python 3.6
+For Jetson Nano
 ```
 wget https://nvidia.box.com/shared/static/fjtbno0vpo676a25cgvuqc1wty0fkkg6.whl -O torch-1.10.0-cp36-cp36m-linux_aarch64.whl
 pip3 install torch-1.10.0-cp36-cp36m-linux_aarch64.whl
 ```
 
-For Python 3.8
+#### For Python 3.8
+Only for Jetson Orin Family
 ```
 wget https://developer.download.nvidia.com/compute/redist/jp/v50/pytorch/torch-1.12.0a0+2c916ef.nv22.3-cp38-cp38-linux_aarch64.whl -O torch-1.12.0a0+2c916ef.nv22.3-cp38-cp38-linux_aarch64.whl
 pip3 install torch-1.12.0a0+2c916ef.nv22.3-cp38-cp38-linux_aarch64.whl
@@ -96,7 +98,14 @@ cp -r /usr/lib/python3.6/dist-packages/Jetson ~/mambaforge/envs/Torch/lib/python
 ```
 ### Install torchvision
 
-For Python 2.7
+Add environment variable
+```
+echo "export CUDA_HOME=/usr/local/cuda" >> ~/.bashrc
+source ~/.bashrc
+```
+After this step, re-switch to your virtual environment may required
+
+#### For Python 2.7
 ```
 cd ~/Downloads/jetson-inference/build
 rm -r -f torchvision-27
@@ -106,7 +115,7 @@ echo "$LOG building torchvision for Python 2.7..."
 sudo python setup.py install
 ```
 
-For Python 3.6
+#### For Python 3.6
 ```
 sudo rm -r -f torchvision-36
 git clone -bv0.3.0 https://github.com/dusty-nv/vision torchvision-36
@@ -115,7 +124,7 @@ echo "$LOG building torchvision for Python 3.6..."
 sudo python3 setup.py install
 ```
 
-For Python 3.8
+#### For Python 3.8
 ```
 rm -r -f torchvision-38
 git clone -bv0.12.0 https://github.com/pytorch/vision torchvision-38
