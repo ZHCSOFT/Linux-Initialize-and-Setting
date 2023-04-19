@@ -118,7 +118,7 @@ sudo python setup.py install
 #### For Python 3.6
 ```
 sudo rm -r -f torchvision-36
-git clone -bv0.3.0 https://github.com/dusty-nv/vision torchvision-36
+git clone -bv0.11.1 https://github.com/pytorch/vision torchvision-36
 cd torchvision-36
 echo "$LOG building torchvision for Python 3.6..."
 sudo python3 setup.py install
