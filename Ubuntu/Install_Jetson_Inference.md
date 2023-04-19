@@ -65,8 +65,8 @@ pip2 install torch-1.1.0-cp27-cp27mu-linux_aarch64.whl
 
 For Python 3.6
 ```
-wget https://nvidia.box.com/shared/static/9eptse6jyly1ggt9axbja2yrmj6pbarc.whl -O torch-1.6.0-cp36-cp36m-linux_aarch64.whl
-pip3 install torch-1.6.0-cp36-cp36m-linux_aarch64.whl
+wget https://nvidia.box.com/shared/static/fjtbno0vpo676a25cgvuqc1wty0fkkg6.whl -O torch-1.10.0-cp36-cp36m-linux_aarch64.whl
+pip3 install torch-1.10.0-cp36-cp36m-linux_aarch64.whl
 ```
 
 For Python 3.8
