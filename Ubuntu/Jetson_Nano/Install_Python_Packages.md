@@ -9,3 +9,8 @@ cd pycuda-2022.2.2/
 python3 configure.py
 python3 setup.py install
 ```
+### TensorRT
+TensorRT package has been installed in system python3.6 dist-packages. If you wanna install tensorrt to your virtual environment, run commands below.
+```
+cp -r /usr/lib/python3.6/dist-packages/tensorrt ~/mambaforge/envs/YOUR_ENV_NAME/lib/python3.6/site-packages/
+```
