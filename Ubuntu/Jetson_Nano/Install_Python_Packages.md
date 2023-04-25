@@ -14,3 +14,10 @@ TensorRT package has been installed in system python3.6 dist-packages. If you wa
 ```
 cp -r /usr/lib/python3.6/dist-packages/tensorrt ~/mambaforge/envs/YOUR_ENV_NAME/lib/python3.6/site-packages/
 ```
+
+### PyBlueZ
+PyBlueZ provides bluetooth support for python interpreter
+```
+sudo apt install bluetooth libbluetooth-dev
+pip3 install pybluez
+```
