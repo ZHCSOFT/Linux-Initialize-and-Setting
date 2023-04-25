@@ -16,9 +16,16 @@ cp -r /usr/lib/python3.6/dist-packages/tensorrt ~/mambaforge/envs/YOUR_ENV_NAME/
 ```
 
 ### PyBlueZ
-pygattlib provides Bluetooth LE devices function
+Dependency packages installation
 ```
-sudo apt install bluetooth libbluetooth-dev libboost-python-dev libboost-thread-dev
+sudo apt install bluetooth libbluetooth-dev libboost-python-dev libboost-thread-dev libcap2-bin
+```
+Set root-free privilege for BLE scanning
+```
+sudo setcap 'cap_net_raw,cap_net_admin+eip' `which hcitool`
+```
+Pygattlib provides Bluetooth LE devices function
+```
 cd ~/Downloads
 git clone https://github.com/oscaracena/pygattlib.git
 cd pygattlib
