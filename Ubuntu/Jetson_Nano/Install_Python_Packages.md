@@ -16,8 +16,15 @@ cp -r /usr/lib/python3.6/dist-packages/tensorrt ~/mambaforge/envs/YOUR_ENV_NAME/
 ```
 
 ### PyBlueZ
+pygattlib provides Bluetooth LE devices function
+```
+sudo apt install bluetooth libbluetooth-dev libboost-python-dev libboost-thread-dev
+cd ~/Downloads
+git clone https://github.com/oscaracena/pygattlib.git
+cd pygattlib
+python3 setup.py install
+```
 PyBlueZ provides bluetooth support for python interpreter
 ```
-sudo apt install bluetooth libbluetooth-dev
 pip3 install pybluez
 ```
