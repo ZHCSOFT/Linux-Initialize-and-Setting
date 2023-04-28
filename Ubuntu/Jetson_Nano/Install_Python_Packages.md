@@ -15,23 +15,16 @@ TensorRT package has been installed in system python3.6 dist-packages. If you wa
 cp -r /usr/lib/python3.6/dist-packages/tensorrt ~/mambaforge/envs/YOUR_ENV_NAME/lib/python3.6/site-packages/
 ```
 
-### PyBlueZ
+### BluePy
 Dependency packages installation
 ```
-sudo apt install bluetooth libbluetooth-dev libboost-python-dev libboost-thread-dev libcap2-bin
+sudo apt install bluetooth libbluetooth-dev libboost-python-dev libboost-thread-dev libcap2-bin bluez-hcidump
 ```
 Set root-free privilege for BLE scanning
 ```
 sudo setcap 'cap_net_raw,cap_net_admin+eip' `which hcitool`
 ```
-Pygattlib provides Bluetooth LE devices function
+BluePy provides bluetooth BLE support for python interpreter
 ```
-cd ~/Downloads
-git clone https://github.com/oscaracena/pygattlib.git
-cd pygattlib
-python3 setup.py install
-```
-PyBlueZ provides bluetooth support for python interpreter
-```
-pip3 install pybluez
+pip3 install bluepy
 ```
