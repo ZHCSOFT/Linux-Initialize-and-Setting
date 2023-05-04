@@ -91,10 +91,10 @@ pip3 install --no-deps mediapipe-0.8.5_cuda102-cp36-cp36m-linux_aarch64.whl prot
 ### Install to system-provided python and virtual-enviroments
 Assume we have conda env named `Torch` located in `~/mambaforge/envs/Torch/` with `Python=3.6`
 ```
-cp /usr/lib/python3.6/dist-packages/jetson_utils_python.so ~/mambaforge/envs/Torch/lib/pythonX.X/site-packages/
-cp /usr/lib/python3.6/dist-packages/jetson_inference_python.so ~/mambaforge/envs/Torch/lib/pythonX.X/site-packages/
-cp -r /usr/lib/python3.6/dist-packages/jetson ~/mambaforge/envs/Torch/lib/pythonX.X/site-packages/
-cp -r /usr/lib/python3.6/dist-packages/Jetson ~/mambaforge/envs/Torch/lib/pythonX.X/site-packages/
+cp /usr/lib/python3.6/dist-packages/jetson_utils_python.so ~/mambaforge/envs/Torch/lib/python3.6/site-packages/
+cp /usr/lib/python3.6/dist-packages/jetson_inference_python.so ~/mambaforge/envs/Torch/lib/python3.6/site-packages/
+cp -r /usr/lib/python3.6/dist-packages/jetson ~/mambaforge/envs/Torch/lib/python3.6/site-packages/
+cp -r /usr/lib/python3.6/dist-packages/Jetson ~/mambaforge/envs/Torch/lib/python3.6/site-packages/
 ```
 ### Install torchvision
 
@@ -108,7 +108,7 @@ After this step, re-switch to your virtual environment may required
 #### For Python 2.7
 ```
 cd ~/Downloads/jetson-inference/build
-rm -r -f torchvision-27
+rm -rf torchvision-27
 git clone -bv0.3.0 https://github.com/dusty-nv/vision torchvision-27
 cd torchvision-27
 echo "$LOG building torchvision for Python 2.7..."
@@ -117,7 +117,8 @@ sudo python setup.py install
 
 #### For Python 3.6
 ```
-sudo rm -r -f torchvision-36
+cd ~/Downloads/jetson-inference/build
+sudo rm -rf torchvision-36
 git clone -bv0.11.1 https://github.com/pytorch/vision torchvision-36
 cd torchvision-36
 echo "$LOG building torchvision for Python 3.6..."
@@ -126,7 +127,8 @@ sudo python3 setup.py install
 
 #### For Python 3.8
 ```
-rm -r -f torchvision-38
+cd ~/Downloads/jetson-inference/build
+rm -rf torchvision-38
 git clone -bv0.12.0 https://github.com/pytorch/vision torchvision-38
 cd torchvision-38
 sudo python3 setup.py install
