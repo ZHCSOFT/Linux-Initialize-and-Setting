@@ -95,6 +95,9 @@ cp /usr/lib/python3.6/dist-packages/jetson_utils_python.so ~/mambaforge/envs/Tor
 cp /usr/lib/python3.6/dist-packages/jetson_inference_python.so ~/mambaforge/envs/Torch/lib/python3.6/site-packages/
 cp -r /usr/lib/python3.6/dist-packages/jetson ~/mambaforge/envs/Torch/lib/python3.6/site-packages/
 cp -r /usr/lib/python3.6/dist-packages/Jetson ~/mambaforge/envs/Torch/lib/python3.6/site-packages/
+cp -r /usr/lib/python3.6/dist-packages/jetson_utils ~/mambaforge/envs/Torch/lib/python3.6/site-packages/
+cp -r /usr/lib/python3.6/dist-packages/jetson_inference ~/mambaforge/envs/Torch/lib/python3.6/site-packages/
+
 ```
 ### Install torchvision
 
