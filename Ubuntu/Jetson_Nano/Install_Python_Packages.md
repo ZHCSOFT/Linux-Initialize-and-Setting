@@ -23,6 +23,7 @@ sudo apt install bluetooth libbluetooth-dev libboost-python-dev libboost-thread-
 Set root-free privilege for BLE scanning
 ```
 sudo setcap 'cap_net_raw,cap_net_admin+eip' `which hcitool`
+sudo setcap 'cap_net_raw,cap_net_admin+eip' "$(readlink -f "$(which python3)")"
 ```
 BluePy provides bluetooth BLE support for python interpreter
 ```
