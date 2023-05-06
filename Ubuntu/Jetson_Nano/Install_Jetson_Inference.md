@@ -89,7 +89,7 @@ pip3 install --no-deps mediapipe-0.8.5_cuda102-cp36-cp36m-linux_aarch64.whl prot
 
 ## Other components
 ### Install to system-provided python and virtual-enviroments
-Assume we have conda env named `Torch` located in `~/mambaforge/envs/Torch/` with `Python=3.6`
+Assume we have conda env named `Torch` located on `~/mambaforge/envs/Torch/` with `Python=3.6`
 ```
 cp /usr/lib/python3.6/dist-packages/jetson_utils_python.so ~/mambaforge/envs/Torch/lib/python3.6/site-packages/
 cp /usr/lib/python3.6/dist-packages/jetson_inference_python.so ~/mambaforge/envs/Torch/lib/python3.6/site-packages/
@@ -97,10 +97,17 @@ cp -r /usr/lib/python3.6/dist-packages/jetson ~/mambaforge/envs/Torch/lib/python
 cp -r /usr/lib/python3.6/dist-packages/Jetson ~/mambaforge/envs/Torch/lib/python3.6/site-packages/
 cp -r /usr/lib/python3.6/dist-packages/jetson_utils ~/mambaforge/envs/Torch/lib/python3.6/site-packages/
 cp -r /usr/lib/python3.6/dist-packages/jetson_inference ~/mambaforge/envs/Torch/lib/python3.6/site-packages/
-
+```
+For venv, assume it is located on `~/venvs/Torch`
+```
+cp /usr/lib/python3.6/dist-packages/jetson_utils_python.so ~/venvs/Torch/lib/python3.6/site-packages/
+cp /usr/lib/python3.6/dist-packages/jetson_inference_python.so ~/venvs/Torch/lib/python3.6/site-packages/
+cp -r /usr/lib/python3.6/dist-packages/jetson ~/venvs/Torch/lib/python3.6/site-packages/
+cp -r /usr/lib/python3.6/dist-packages/Jetson ~/venvs/Torch/lib/python3.6/site-packages/
+cp -r /usr/lib/python3.6/dist-packages/jetson_utils ~/venvs/Torch/lib/python3.6/site-packages/
+cp -r /usr/lib/python3.6/dist-packages/jetson_inference ~/venvs/Torch/lib/python3.6/site-packages/
 ```
 ### Install torchvision
-
 Add environment variable
 ```
 echo "export CUDA_HOME=/usr/local/cuda" >> ~/.bashrc
