@@ -125,5 +125,6 @@ Copy opencv directory to system Python3 environment(Optional)<br>
 ```
 sudo cp ~/mambaforge/envs/YOUR_CONDA_ENV/lib/python3.6/site-packages/cv2 /usr/lib/python3.6/dist-packages/ -r
 conda deactivate && conda deactivate
+pip3 install wheel cython numpy
 echo $(python3 -c "import cv2; print(cv2.__version__)")
 ```
