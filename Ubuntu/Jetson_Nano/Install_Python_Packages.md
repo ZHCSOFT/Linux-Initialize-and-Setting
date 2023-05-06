@@ -10,9 +10,14 @@ python3 configure.py
 python3 setup.py install
 ```
 ### TensorRT
-TensorRT package has been installed in system python3.6 dist-packages. If you wanna install tensorrt to your virtual environment, run commands below.
+TensorRT package has been installed in system python3.6 dist-packages. If you wanna install tensorrt to your virtual environment, run commands below.<br>
+Mambaforge, named Torch, located on `~/mambaforge/envs/Torch`
 ```
-cp -r /usr/lib/python3.6/dist-packages/tensorrt ~/mambaforge/envs/YOUR_ENV_NAME/lib/python3.6/site-packages/
+cp -r /usr/lib/python3.6/dist-packages/tensorrt ~/mambaforge/envs/Torch/lib/python3.6/site-packages/
+```
+venv, named Torch, located on `~/venvs/Torch`
+```
+cp -r /usr/lib/python3.6/dist-packages/tensorrt ~/venvs/Torch/lib/python3.6/site-packages/
 ```
 
 ### BluePy
