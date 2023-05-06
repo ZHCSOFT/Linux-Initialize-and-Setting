@@ -2,8 +2,13 @@ Installing opencv and opencv-contrib via apt, dnf or pacman is convenient. But i
 This article takes opencv-4.7.0 installation on NVIDIA Jetson Nano as example, including Python 3.6 and Python 2.7 packages.
 
 ### Install essential packages
+APT Packages
 ```
 sudo apt install gtk+-3.0 qt5-default libvtk6-dev zlib1g-dev libjpeg-dev libwebp-dev libpng-dev libtiff5-dev libopenexr-dev libgdal-dev libdc1394-22-dev libavcodec-dev libavformat-dev libswscale-dev libtheora-dev libvorbis-dev libxvidcore-dev libx264-dev yasm libopencore-amrnb-dev libopencore-amrwb-dev libv4l-dev libxine2-dev libtbb-dev libeigen3-dev
+```
+Python Packages
+```
+pip3 install wheel cython numpy
 ```
 
 Link .so (Only for x86_64)
@@ -128,11 +133,21 @@ cd ~/Downloads/opencv-4.7.0/build
 make -j4
 sudo make install
 ```
-Copy opencv directory to system Python3 environment(Optional)<br>
+Copy opencv directory to other Python3 environment (Optional)
+
+(For venv, assume it is located on ~/venvs/Torch)
+```
+source ~/venvs/Torch/bin/activate
+pip3 install wheel cython numpy
+cp /usr/lib/python3/dist-packages/cv2.cpython-36m-aarch64-linux-gnu.so ~/venvs/Torch/lib/python3.6/site-packages/
+```
 (For Python 3.6, Mambaforge, assume your env name is Torch)
 ```
-sudo cp /usr/lib/python3.6/dist-packages/cv2 ~/mambaforge/envs/Torch/lib/python3.6/site-packages/  -r
 conda deactivate && conda deactivate
 pip3 install wheel cython numpy
+cp /usr/lib/python3/dist-packages/cv2.cpython-36m-aarch64-linux-gnu.so ~/mambaforge/envs/Torch/lib/python3.6/site-packages/
+```
+Check your installation
+```
 echo $(python3 -c "import cv2; print(cv2.__version__)")
 ```
