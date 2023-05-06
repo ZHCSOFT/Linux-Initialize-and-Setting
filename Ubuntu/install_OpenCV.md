@@ -22,9 +22,9 @@ unzip 4.7.0.zip && rm 4.7.0.zip
 ```
 
 ### Configure for build
-Activate your conda environment
+Exit your conda environment
 ```
-conda activate YOUR_CONDA_ENV
+conda deactivate && conda deactivate
 ```
 
 Create build path and enter to the path
@@ -55,6 +55,7 @@ cmake \
 -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-4.7.0/modules \
 -D OPENCV_ENABLE_NONFREE=ON \
 -D OPENCV_GENERATE_PKGCONFIG=ON \
+-D OPENCV_SKIP_PYTHON_LOADER=ON \
 -D OPENCV_DNN_CUDA=ON \
 -D BUILD_opencv_python2=ON \
 -D BUILD_opencv_python3=ON \
@@ -79,11 +80,18 @@ cmake \
 #### Excepted configuration output
 
 ```
+--   Python 2:
+--     Interpreter:                 /usr/bin/python2.7 (ver 2.7.17)
+--     Libraries:                   /usr/lib/aarch64-linux-gnu/libpython2.7.so (ver 2.7.17)
+--     numpy:                       /usr/lib/python2.7/dist-packages/numpy/core/include (ver 1.13.3)
+--     install path:                /usr/lib/python2.7/dist-packages
+```
+```
 --   Python 3:
---     Interpreter:                 /home/USERNAME/mambaforge/envs/YOUR_CONDA_ENV/bin/python3 (ver 3.6.15)
---     Libraries:                   /home/USERNAME/mambaforge/envs/YOUR_CONDA_ENV/lib/libpython3.so (ver 3.6.15)
---     numpy:                       /home/USERNAME/mambaforge/envs/YOUR_CONDA_ENV/lib/python3.6/site-packages/numpy/core/include (ver )
---     install path:                /home/USERNAME/mambaforge/envs/YOUR_CONDA_ENV/lib/python3.6/site-packages/cv2/python-3.6
+--     Interpreter:                 /usr/bin/python3 (ver 3.6.9)
+--     Libraries:                   /usr/lib/libpython3.so (ver 3.6.9)
+--     numpy:                       /usr/lib/python3/dist-packages/numpy/core/include (ver 1.13.3)
+--     install path:                /usr/lib/python3/dist-packages
 ```
 
 #### Some tricks
