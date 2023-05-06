@@ -129,9 +129,9 @@ make -j4
 sudo make install
 ```
 Copy opencv directory to system Python3 environment(Optional)<br>
-(For Python 3.6, Mambaforge)
+(For Python 3.6, Mambaforge, assume your env name is Torch)
 ```
-sudo cp ~/mambaforge/envs/YOUR_CONDA_ENV/lib/python3.6/site-packages/cv2 /usr/lib/python3.6/dist-packages/ -r
+sudo cp /usr/lib/python3.6/dist-packages/cv2 ~/mambaforge/envs/Torch/lib/python3.6/site-packages/  -r
 conda deactivate && conda deactivate
 pip3 install wheel cython numpy
 echo $(python3 -c "import cv2; print(cv2.__version__)")
