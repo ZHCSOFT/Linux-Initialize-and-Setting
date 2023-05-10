@@ -30,9 +30,18 @@ Set root-free privilege for BLE scanning
 sudo setcap 'cap_net_raw,cap_net_admin+eip' `which hcitool`
 sudo setcap 'cap_net_raw,cap_net_admin+eip' "$(readlink -f "$(which python3)")"
 ```
-BluePy provides bluetooth BLE support for python interpreter
+bluepy provides bluetooth BLE support for python interpreter
 ```
 pip3 install bluepy
-pip3 install gattlib
-pip3 install pybluez
+```
+pybluez also available
+```
+cd ~/Downloads
+git clone https://github.com/pybluez/pybluez.git
+cd pybluez
+```
+Edit `LINE 98` of `setup.py`: `python_requires=">=3.6"`
+```
+python3 setup.py install
+pip3 install -e .[ble]
 ```
