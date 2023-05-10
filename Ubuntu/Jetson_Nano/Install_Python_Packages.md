@@ -32,7 +32,7 @@ sudo setcap 'cap_net_raw,cap_net_admin+eip' "$(readlink -f "$(which python3)")"
 ```
 bluepy provides bluetooth BLE support for python interpreter
 ```
-pip3 install bluepy
+pip3 install bluepy dbus-python
 ```
 pybluez also available
 ```
