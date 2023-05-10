@@ -20,7 +20,7 @@ venv, named Torch, located on `~/venvs/Torch`
 cp -r /usr/lib/python3.6/dist-packages/tensorrt ~/venvs/Torch/lib/python3.6/site-packages/
 ```
 
-### BluePy
+### Bluetooth develop packages
 Dependency packages installation
 ```
 sudo apt install bluetooth libbluetooth-dev libboost-python-dev libboost-thread-dev libcap2-bin bluez-hcidump
@@ -33,4 +33,6 @@ sudo setcap 'cap_net_raw,cap_net_admin+eip' "$(readlink -f "$(which python3)")"
 BluePy provides bluetooth BLE support for python interpreter
 ```
 pip3 install bluepy
+pip3 install gattlib
+pip3 install pybluez
 ```
