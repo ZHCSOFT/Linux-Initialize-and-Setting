@@ -45,3 +45,9 @@ Edit `LINE 98` of `setup.py`: `python_requires=">=3.6"`
 python3 setup.py install
 pip3 install -e .[ble]
 ```
+
+### GObject
+```
+sudo apt install libgirepository1.0-dev
+pip3 install pygobject
+```
