@@ -1,8 +1,6 @@
 ## Background
 Assume we have a computer with `Disk_0` storage and a linux is running on `LVMs` named `root` for main storage and `swap_1` for memory swap built on `Volume Groups` named `vgubuntu`, while the `Volume Group` `vgubuntu` is working on `Disk_0`
 
-Now we have bought new storage device named `Disk_1` to extend `root` and `swap_1`'s available space
-
 ## Basic fdisk info
 
 ### Check space info
@@ -47,6 +45,9 @@ We can see the main container is `ext4` filesystem type
 UUID=6237-CAC9  /boot/efi       vfat    umask=0077      0       1
 /dev/mapper/vgubuntu-swap_1 none            swap    sw              0       0
 ```
+
+## Extend via new volume
+Now we have bought new storage device named `Disk_1` to extend `root` and `swap_1`'s available space
 
 ### Check general storage info
 ```
@@ -186,10 +187,10 @@ We have two `LVM` named `root` for main storage and `swap_1` for memory swap bui
   Block device           253:1
 ```
 
-## Make partition and format
+### Make partition and format
 Since we are planning assign half space of `Disk_1` recognized `/dev/sdb` to `LVM` while remaining space would be used for other purposes, we should create two partitions then keep the first partition and format the second partition to Ext4
 
-### Create partition
+#### Create partition
 ```
 sudo fdisk /dev/sdb
 n
@@ -202,46 +203,46 @@ ENTER #(ENTER to default, 1073742849-2147483647)
 ENTER #(secter end of second partition)
 w
 ```
-### (Optional) format
+#### (Optional) format
 We have created partitions `/dev/sdb1` and `/dev/sdb2` for `Disk_1`, then we need to format the second partition for further use
 ```
 sudo mkfs.ext4 /dev/sdb2
 ```
 
-## Assign disk or partition to Volume Group
+### Assign disk or partition to Volume Group
 
-### Assign partition `/dev/sdb1`
+#### Assign partition `/dev/sdb1`
 ```
 sudo vgextend vgubuntu /dev/sdb1
 ```
-### (Optional) Assign whole disk `/dev/sdb`
+#### (Optional) Assign whole disk `/dev/sdb`
 ```
 sudo vgextend vgubuntu /dev/sdb
 ```
-### (Optional)  Remove partition from `Volume Group`
+#### (Optional)  Remove partition from `Volume Group`
 ```
 sudo vgreduce vgubuntu /dev/sdb1
 ```
 
-## Modify `LVM` space and synchronous
+### Modify `LVM` space and synchronous
 
 Physical memory was usually used out for some program, thus we also need larger swap memory space
 
-### Extend `LVM` space
+#### Extend `LVM` space
 ```
 sudo lvresize -L 1024G /dev/vgubuntu/root
 sudo lvresize -L 32G /dev/vgubuntu/swap_1
 ```
 
-### Synchronous space change (ext4)
+#### Synchronous space change (ext4)
 ```
 sudo resize2fs /dev/mapper/vgubuntu-root
 ```
-### Synchronous space change (xfs)
+#### Synchronous space change (xfs)
 ```
 sudo xfs_growfs /dev/mapper/vgubuntu-root
 ```
-### Apply swap space change
+#### Apply swap space change
 ```
 sudo swapoff -v /dev/mapper/vgubuntu-swap_1
 sudo mkswap /dev/mapper/vgubuntu-swap_1
