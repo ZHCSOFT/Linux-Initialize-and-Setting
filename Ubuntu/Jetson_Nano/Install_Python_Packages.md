@@ -51,3 +51,9 @@ pip3 install -e .[ble]
 sudo apt install libgirepository1.0-dev libcairo2-dev
 pip3 install pygobject
 ```
+
+### dbus
+```
+sudo apt install libdbus-glib-1-dev
+pip3 install dbus-python
+```
