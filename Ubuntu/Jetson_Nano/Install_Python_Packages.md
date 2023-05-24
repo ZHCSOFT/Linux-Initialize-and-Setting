@@ -48,6 +48,6 @@ pip3 install -e .[ble]
 
 ### GObject
 ```
-sudo apt install libgirepository1.0-dev
+sudo apt install libgirepository1.0-dev libcairo2-dev
 pip3 install pygobject
 ```
