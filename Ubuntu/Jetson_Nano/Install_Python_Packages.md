@@ -32,7 +32,8 @@ sudo setcap 'cap_net_raw,cap_net_admin+eip' "$(readlink -f "$(which python3)")"
 ```
 bluepy provides bluetooth BLE support for python interpreter
 ```
-pip3 install bluepy dbus-python pygatt pexpect
+pip3 install bluepy dbus-python pexpect
+pip3 install git+https://github.com/peplin/pygatt
 ```
 pybluez also available
 ```
