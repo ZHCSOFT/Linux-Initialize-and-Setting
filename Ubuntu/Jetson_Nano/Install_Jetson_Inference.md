@@ -110,13 +110,16 @@ cp -r /usr/lib/python3.6/dist-packages/jetson_inference ~/venvs/Torch/lib/python
 ### Copy libraries to other device
 ```
 sudo scp USERNAME@YOURIP:/usr/local/lib/libjetson* /usr/local/lib/
+sudo /sbin/ldconfig
+
 sudo scp -r USERNAME@YOURIP:/usr/lib/python3.6/dist-packages/jetson_* /usr/lib/python3.6/dist-packages/
 sudo scp -r USERNAME@YOURIP:/usr/lib/python3.6/dist-packages/Jetson /usr/lib/python3.6/dist-packages/
 sudo scp -r USERNAME@YOURIP:/usr/lib/python3.6/dist-packages/jetson /usr/lib/python3.6/dist-packages/
+
 sudo scp -r USERNAME@YOURIP:/usr/local/bin/images /usr/local/bin/
 sudo scp -r USERNAME@YOURIP:/usr/local/bin/networks /usr/local/bin/
 
-sudo /sbin/ldconfig
+sudo apt install libgstrtspserver-1.0-0 libglew-dev
 ```
 
 ### Install torchvision
