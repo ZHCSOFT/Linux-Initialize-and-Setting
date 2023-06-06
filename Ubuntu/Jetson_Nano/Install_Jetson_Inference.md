@@ -109,15 +109,32 @@ cp -r /usr/lib/python3.6/dist-packages/jetson_inference ~/venvs/Torch/lib/python
 ```
 ### Copy libraries to other device
 ```
-sudo scp USERNAME@YOURIP:/usr/local/lib/libjetson* /usr/local/lib/
+sudo scp USERNAME@SOURCEIP:/usr/local/lib/libjetson* /usr/local/lib/
 sudo /sbin/ldconfig
 
-sudo scp -r USERNAME@YOURIP:/usr/lib/python3.6/dist-packages/jetson_* /usr/lib/python3.6/dist-packages/
-sudo scp -r USERNAME@YOURIP:/usr/lib/python3.6/dist-packages/Jetson /usr/lib/python3.6/dist-packages/
-sudo scp -r USERNAME@YOURIP:/usr/lib/python3.6/dist-packages/jetson /usr/lib/python3.6/dist-packages/
+sudo scp -r USERNAME@SOURCEIP:/usr/lib/python3.6/dist-packages/jetson_* /usr/lib/python3.6/dist-packages/
+sudo scp -r USERNAME@SOURCEIP:/usr/lib/python3.6/dist-packages/Jetson /usr/lib/python3.6/dist-packages/
+sudo scp -r USERNAME@SOURCEIP:/usr/lib/python3.6/dist-packages/jetson /usr/lib/python3.6/dist-packages/
 
-sudo scp -r USERNAME@YOURIP:/usr/local/bin/images /usr/local/bin/
-sudo scp -r USERNAME@YOURIP:/usr/local/bin/networks /usr/local/bin/
+sudo scp -r USERNAME@SOURCEIP:/usr/lib/python2.7/dist-packages/jetson_* /usr/lib/python2.7/dist-packages/
+sudo scp -r USERNAME@SOURCEIP:/usr/lib/python2.7/dist-packages/Jetson /usr/lib/python2.7/dist-packages/
+sudo scp -r USERNAME@SOURCEIP:/usr/lib/python2.7/dist-packages/jetson /usr/lib/python2.7/dist-packages/
+
+sudo scp -r USERNAME@SOURCEIP:/usr/local/include/jetson-inference /usr/local/include/
+sudo scp -r USERNAME@SOURCEIP:/usr/local/include/jetson-utils /usr/local/include/
+sudo scp -r USERNAME@SOURCEIP:/usr/local/share/jetson-inference/ /usr/local/share/
+sudo scp -r USERNAME@SOURCEIP:/usr/local/share/jetson-utils /usr/local/share/
+
+sudo scp -r USERNAME@SOURCEIP:/usr/local/bin/images /usr/local/bin/
+sudo scp -r USERNAME@SOURCEIP:/usr/local/bin/networks /usr/local/bin/
+
+sudo scp USERNAME@SOURCEIP:/usr/local/bin/tao-model-downloader.sh /usr/local/bin/
+sudo scp USERNAME@SOURCEIP:/usr/local/bin/camera-capture /usr/local/bin/
+sudo scp USERNAME@SOURCEIP:/usr/local/bin/l4t_version.sh /usr/local/bin/
+sudo scp USERNAME@SOURCEIP:/usr/local/bin/test-cuda.sh /usr/local/bin/
+sudo scp USERNAME@SOURCEIP:/usr/local/bin/video-viewer /usr/local/bin/
+sudo scp USERNAME@SOURCEIP:/usr/local/bin/*net /usr/local/bin/
+sudo scp USERNAME@SOURCEIP:/usr/local/bin/*.py /usr/local/bin/
 
 sudo apt install libgstrtspserver-1.0-0 libglew-dev
 ```
