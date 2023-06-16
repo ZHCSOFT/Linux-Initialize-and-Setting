@@ -30,6 +30,8 @@ cd build
 ```
 make -j4
 sudo make install
+
+sudo ldconfig
 ```
 
 ## Download remaining modules
