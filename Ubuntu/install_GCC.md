@@ -1,7 +1,7 @@
 ### Preparing basic packages and source code
 ```
 sudo apt update
-sudo dnf install gcc g++
+sudo apt install gcc g++
 ```
 
 ```
