@@ -1,7 +1,7 @@
 ### Preparing basic packages and source code
 ```
 sudo apt update
-sudo apt install gcc g++ flex
+sudo apt install gcc g++ flex gcc-multilib
 ```
 
 ```
