@@ -31,12 +31,8 @@ ls -al /usr/bin/g++*
 ```
 Assume we have gcc-7 currently (Check current gcc version by `gcc -v` and g++ by `g++ -v`)
 ```
-sudo rm /usr/bin/gcc
-
 sudo alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 100
 sudo alternatives --install /usr/bin/gcc gcc /usr/local/gcc-11/bin/gcc 90
-
-sudo rm /usr/bin/g++
 
 sudo alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 100
 sudo alternatives --install /usr/bin/g++ g++ /usr/local/gcc-11/bin/g++ 90
