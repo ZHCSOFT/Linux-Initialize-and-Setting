@@ -67,3 +67,14 @@ pip3 install pygobject
 sudo apt install libdbus-glib-1-dev
 pip3 install dbus-python
 ```
+
+### jtop
+```
+sudo apt install python-pip
+sudo pip install jetson-stats
+sudo reboot now
+
+systemctl status jtop.serivce
+jtop
+
+```
