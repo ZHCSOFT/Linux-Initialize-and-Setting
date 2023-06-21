@@ -74,7 +74,7 @@ sudo apt install python-pip
 sudo pip install jetson-stats
 sudo reboot now
 
-systemctl status jtop.serivce
+systemctl status jtop
 jtop
 
 ```
