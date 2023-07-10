@@ -65,6 +65,7 @@ pip3 install pygobject
 ### dbus
 ```
 sudo apt install libdbus-glib-1-dev
+pip3 install setuptools
 pip3 install dbus-python
 ```
 
