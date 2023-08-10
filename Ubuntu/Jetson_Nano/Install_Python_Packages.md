@@ -18,6 +18,12 @@ pip3 install --no-deps mediapipe-0.8.5_cuda102-cp36-cp36m-linux_aarch64.whl
 pip3 install dataclasses attrs protobuf==3.19.6
 ```
 
+### onnx
+```
+sudo apt install protobuf-compiler
+pip3 install onnx onnxruntime
+```
+
 ### TensorRT
 TensorRT package has been installed in system python3.6 dist-packages. If you wanna install tensorrt to your virtual environment, run commands below.<br>
 Mambaforge, named Torch, located on `~/mambaforge/envs/Torch`
