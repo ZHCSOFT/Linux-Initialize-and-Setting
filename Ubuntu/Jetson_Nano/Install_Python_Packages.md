@@ -38,7 +38,7 @@ cp -r /usr/lib/python3.6/dist-packages/tensorrt ~/venvs/Torch/lib/python3.6/site
 ### Bluetooth develop packages
 Dependency packages installation
 ```
-sudo apt install bluetooth libbluetooth-dev libboost-python-dev libboost-thread-dev libcap2-bin bluez-hcidump
+sudo apt install bluetooth libbluetooth-dev libboost-python-dev libdbus-glib-1-dev libboost-thread-dev libcap2-bin bluez-hcidump
 ```
 Set root-free privilege for BLE scanning
 ```
