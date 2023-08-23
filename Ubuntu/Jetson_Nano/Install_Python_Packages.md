@@ -21,7 +21,7 @@ pip3 install dataclasses attrs protobuf==3.19.6
 ### onnx & onnxruntime
 ```
 sudo apt install protobuf-compiler libprotobuf-dev
-pip3 install onnx onnxruntime
+pip3 install onnx==1.9.0 onnxruntime
 ```
 
 ### TensorRT
