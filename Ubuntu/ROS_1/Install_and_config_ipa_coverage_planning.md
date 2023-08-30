@@ -13,3 +13,20 @@ git clone https://github.com/ipa320/ipa_coverage_planning.git
 cd ../..
 catkin_make
 ```
+
+# Run demo
+
+### For Terminal 1
+```
+roscore
+```
+### For Terminal 2
+```
+source ./devel/setup.bash
+rosrun ipa_room_exploration room_exploration_server
+```
+### For Terminal 3
+```
+source ./devel/setup.bash
+rosrun ipa_room_exploration room_exploration_client
+```
