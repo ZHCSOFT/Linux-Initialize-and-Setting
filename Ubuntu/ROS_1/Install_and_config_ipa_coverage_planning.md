@@ -21,12 +21,32 @@ catkin_make
 roscore
 ```
 ### For Terminal 2
+
 ```
 source ./devel/setup.bash
+```
+
+#### Method 1
+```
 rosrun ipa_room_exploration room_exploration_server
 ```
+#### Method 2
+```
+roslaunch ipa_room_exploration room_exploration_action_server.launch
+```
+
 ### For Terminal 3
+
 ```
 source ./devel/setup.bash
+```
+
+#### Method 1
+```
 rosrun ipa_room_exploration room_exploration_client
+```
+
+#### Method 2
+```
+roslaunch ipa_room_exploration room_exploration_client.launch robot_env:=sample_warehouse use_test_maps:=false
 ```
